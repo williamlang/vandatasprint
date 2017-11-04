@@ -15,6 +15,7 @@ class DetermineScoreCommand(Command):
 
         columns = ['game_id', 'home_score', 'away_score']
         results = {}
+        players = {}
 
         with open(data_set, newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -41,12 +42,7 @@ class DetermineScoreCommand(Command):
                 writer.writerow([game_id, goals[0], goals[1]])
 
     def is_home(self, row):
-        if row[7] == row[22] or \
-            row[7] == row[23] or \
-            row[7] == row[24] or \
-            row[7] == row[25] or \
-            row[7] == row[26] or \
-            row[7] == row[27]:
+        if row[3] == row[12]:
             return True
         else:
             return False
