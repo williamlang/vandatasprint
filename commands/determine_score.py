@@ -13,7 +13,7 @@ class DetermineScoreCommand(Command):
         data_set = 'final_data.csv'
         output_set = 'scores.csv'
 
-        columns = ['game_id', 'home_score', 'away_score']
+        columns = ['game_id', 'home_score', 'away_score', 'winning_team_id']
         results = {}
         players = {}
 
